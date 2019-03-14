@@ -1,14 +1,11 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {White, Black, Orange, Dark_Grey} from '../constant/color';
+import {StyleSheet, Text, View} from "react-native";
 
-import {Light_Grey, Dark_Grey, Orange, White, Black} from './constant/color';
-
-type Props = {};
-export default class App extends Component<Props> {
+export default class dateCounter extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.apptitle}>Gender Neutral Dating App</Text>
+        <Text style={styles.counter}></Text>
       </View>
     );
   }
@@ -25,7 +22,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto, sans-serif',
 
   },
-  apptitle: {
+  counter: {
     fontSize: 18,
     textAlign: 'left',
     height: 60,
@@ -33,6 +30,5 @@ const styles = StyleSheet.create({
     backgroundColor: Dark_Grey,
     fontcolor: Black,
     paddingLeft: 16,
-    top: 0
   },
 });
