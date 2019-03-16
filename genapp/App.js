@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Dimensions} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 
 import {Light_Grey, Dark_Grey, Orange, White, Black} from './constant/color';
@@ -20,6 +20,16 @@ export default class App extends Component<Props> {
         </View>
         <View style={styles.footer}>
           <View style={styles.innerFooter}>
+            <TouchableOpacity style={styles.noButton}>
+              <Text style={styles.noTextButton}>
+                No
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.yesButton}>
+              <Text style={styles.yesTextButton}>
+                Yes
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -30,12 +40,12 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    backgroundColor: 'green',
+    backgroundColor: White,
     justifyContent: 'center',
   },
   header: {
     flex: 0.2,
-    backgroundColor: Dark_Grey,
+    backgroundColor: White,
     alignItems: 'flex-end',
     justifyContent: 'center',
     flexDirection: 'row',
@@ -46,13 +56,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 60,
     maxWidth: 500,
-    backgroundColor: 'yellow',
+    backgroundColor: Dark_Grey,
   },
   apptitle: {
     fontFamily: 'Roboto',
     fontSize: 18,
+    fontWeight: 'bold',
     textAlign: 'left',
-    color: Black,
+    color: White,
     paddingLeft: 16,
   },
   main: {
@@ -68,7 +79,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 0.2,
-    backgroundColor: Dark_Grey,
+    backgroundColor: White,
     alignItems: 'flex-start',
     justifyContent: 'center',
     flexDirection: 'row',
@@ -76,10 +87,39 @@ const styles = StyleSheet.create({
   },
   innerFooter: {
     flex:1,
-    alignItems: 'flex-start',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
     height: 60,
     maxWidth: 500,
-    backgroundColor: 'yellow',
+    backgroundColor: Light_Grey,
+  },
+  noButton: {
+    flex: 0.5,
+    backgroundColor: Dark_Grey,
+    height: '100%',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  noTextButton: {
+    fontFamily: 'Roboto',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: White,
+  },
+  yesButton: {
+    flex: 0.5,
+    backgroundColor: Orange,
+    height: '100%',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  yesTextButton: {
+    fontFamily: 'Roboto',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: White,
   },
 });
