@@ -10,32 +10,28 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <View style={styles.headerBlock}>
+          <View style={styles.innerHeader}>
             <Text style={styles.apptitle}>Gender Neutral Dating App</Text>
           </View>
         </View>
         <View style={styles.main}>
+          <View style={styles.innerMain}>
+          </View>
         </View>
         <View style={styles.footer}>
+          <View style={styles.innerFooter}>
+          </View>
         </View>
       </View>
     );
   }
 }
 
-// let {width, height} = Dimensions.get('window');
-// if (width < 500) {
-//   let maximumHeight = width;
-// }
-
-
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    // maxHeight: 500,
-    // maxWidth: 500,
-    // maxHeight: width,
     backgroundColor: 'green',
+    justifyContent: 'center',
   },
   header: {
     flex: 0.2,
@@ -44,13 +40,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
   },
-  headerBlock: {
+  innerHeader: {
     flex:1,
-    // alignItems: 'flex-start',
-    // justifyContent: 'center',
     alignItems: 'flex-start',
     justifyContent: 'center',
-    // flexDirection: 'column',
     height: 60,
     maxWidth: 500,
     backgroundColor: 'yellow',
@@ -64,10 +57,29 @@ const styles = StyleSheet.create({
   },
   main: {
     flex: 0.6,
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  innerMain: {
+    flex:1,
     backgroundColor: White,
+    maxWidth: 500,
+    maxHeight: 500,
   },
   footer: {
     flex: 0.2,
     backgroundColor: Dark_Grey,
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    flexDirection: 'row',
+
+  },
+  innerFooter: {
+    flex:1,
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    height: 60,
+    maxWidth: 500,
+    backgroundColor: 'yellow',
   },
 });
