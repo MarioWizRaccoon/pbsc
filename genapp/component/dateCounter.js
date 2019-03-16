@@ -2,6 +2,9 @@ import {White, Black, Orange, Dark_Grey} from '../constant/color';
 import {StyleSheet, Text, View} from "react-native";
 
 export default class dateCounter extends Component<Props> {
+
+
+
   render() {
     return (
       <View style={styles.container}>
@@ -17,8 +20,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: White,
-    maxHeight: 500,
-    maxWidth: 500,
+    height: 500,
+    width: 500,
     fontFamily: 'Roboto, sans-serif',
 
   },
@@ -28,7 +31,7 @@ const styles = StyleSheet.create({
     height: 60,
     alignItems: 'center',
     backgroundColor: Dark_Grey,
-    fontcolor: Black,
+    color: Black,
     paddingLeft: 16,
   },
 });

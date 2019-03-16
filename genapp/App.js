@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Dimensions} from 'react-native';
+
 
 import {Light_Grey, Dark_Grey, Orange, White, Black} from './constant/color';
 
@@ -8,31 +9,65 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.apptitle}>Gender Neutral Dating App</Text>
+        <View style={styles.header}>
+          <View style={styles.headerBlock}>
+            <Text style={styles.apptitle}>Gender Neutral Dating App</Text>
+          </View>
+        </View>
+        <View style={styles.main}>
+        </View>
+        <View style={styles.footer}>
+        </View>
       </View>
     );
   }
 }
 
+// let {width, height} = Dimensions.get('window');
+// if (width < 500) {
+//   let maximumHeight = width;
+// }
+
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex:1,
+    // maxHeight: 500,
+    // maxWidth: 500,
+    // maxHeight: width,
+    backgroundColor: 'green',
+  },
+  header: {
+    flex: 0.2,
+    backgroundColor: Dark_Grey,
+    alignItems: 'flex-end',
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: White,
-    maxHeight: 500,
+    flexDirection: 'row',
+  },
+  headerBlock: {
+    flex:1,
+    // alignItems: 'flex-start',
+    // justifyContent: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    // flexDirection: 'column',
+    height: 60,
     maxWidth: 500,
-    fontFamily: 'Roboto, sans-serif',
-
+    backgroundColor: 'yellow',
   },
   apptitle: {
+    fontFamily: 'Roboto',
     fontSize: 18,
     textAlign: 'left',
-    height: 60,
-    alignItems: 'center',
-    backgroundColor: Dark_Grey,
-    fontcolor: Black,
+    color: Black,
     paddingLeft: 16,
-    top: 0
+  },
+  main: {
+    flex: 0.6,
+    backgroundColor: White,
+  },
+  footer: {
+    flex: 0.2,
+    backgroundColor: Dark_Grey,
   },
 });
