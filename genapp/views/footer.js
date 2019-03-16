@@ -1,23 +1,17 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 import {Light_Grey, Dark_Grey, Orange, White} from '../constant/color';
+
+import Bbutton from '../components/bbutton';
 
 export default class Footer extends Component<Props> {
   render() {
     return (
         <View style={styles.footer}>
           <View style={styles.innerFooter}>
-            <TouchableOpacity style={styles.noButton}>
-              <Text style={styles.noTextButton}>
-                No
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.yesButton}>
-              <Text style={styles.yesTextButton}>
-                Yes
-              </Text>
-            </TouchableOpacity>
+            <Bbutton text="No"  buttStyle={styles.noButton}   textStyle={styles.noTextButton} />
+            <Bbutton text="Yes" buttStyle={styles.yesButton}  textStyle={styles.yesTextButton} />
           </View>
         </View>
     );

@@ -3,9 +3,9 @@ import {StyleSheet, View} from 'react-native';
 
 import {White} from './constant/color';
 
-import Header from './component/header';
-import Main from './component/main';
-import Footer from './component/footer';
+import Header from './views/header';
+import Main from './views/main';
+import Footer from './views/footer';
 
 export default class App extends Component<Props> {
   render() {

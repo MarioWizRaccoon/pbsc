@@ -19,11 +19,11 @@ const styles = StyleSheet.create({
     flex: 0.6,
     justifyContent: 'center',
     flexDirection: 'row',
+    maxHeight: 380,
   },
   innerMain: {
     flex:1,
     backgroundColor: White,
     maxWidth: 500,
-    maxHeight: 500,
   },
 });
