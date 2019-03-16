@@ -40,12 +40,12 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    backgroundColor: 'green',
+    backgroundColor: White,
     justifyContent: 'center',
   },
   header: {
     flex: 0.2,
-    backgroundColor: Dark_Grey,
+    backgroundColor: White,
     alignItems: 'flex-end',
     justifyContent: 'center',
     flexDirection: 'row',
@@ -56,13 +56,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 60,
     maxWidth: 500,
-    backgroundColor: 'yellow',
+    backgroundColor: Dark_Grey,
   },
   apptitle: {
     fontFamily: 'Roboto',
     fontSize: 18,
+    fontWeight: 'bold',
     textAlign: 'left',
-    color: Black,
+    color: White,
     paddingLeft: 16,
   },
   main: {
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 0.2,
-    backgroundColor: Dark_Grey,
+    backgroundColor: White,
     alignItems: 'flex-start',
     justifyContent: 'center',
     flexDirection: 'row',
@@ -91,24 +92,34 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     height: 60,
     maxWidth: 500,
-    backgroundColor: 'yellow',
+    backgroundColor: Light_Grey,
   },
   noButton: {
     flex: 0.5,
-    backgroundColor: 'magenta',
+    backgroundColor: Dark_Grey,
     height: '100%',
     width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   noTextButton: {
-
+    fontFamily: 'Roboto',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: White,
   },
   yesButton: {
     flex: 0.5,
-    backgroundColor: 'red',
+    backgroundColor: Orange,
     height: '100%',
     width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   yesTextButton: {
-
+    fontFamily: 'Roboto',
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: White,
   },
 });
