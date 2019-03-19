@@ -9,7 +9,7 @@ export default class Main extends Component<Props> {
 
   constructor(props){
     super(props);
-    this.state ={ isLoading: true}
+    this.state = { isLoading: true }
   }
 
   componentDidMount(){
@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
   },
   personName: {
     color: Black,
-      fontSize: 32,
-      textTransform: 'capitalize'
+    fontSize: 32,
+    textTransform: 'capitalize'
   },
   personAge: {
     color: Black,
