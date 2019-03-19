@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {StyleSheet,View, Text, Image, ActivityIndicator} from 'react-native';
 
 import {White, Black} from '../constant/color';
-// import {api} from '../api/person.api';
 
+// TODO: modify activityIndicator with the "loading..." statement
+// TODO: record uuid and set state "desired" to false.
 
 export default class Main extends Component<Props> {
 
