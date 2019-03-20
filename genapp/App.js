@@ -24,13 +24,17 @@ export default class App extends Component<Props> {
 
   addPersonOfInterest = () => {
     this.setState({
-      count: this.state.count + 1
+      count: this.state.count + 1,
     });
 
     this.callApi();
   };
 
   callApi = () => {
+    this.setState({
+      isLoading: true,
+    });
+
     return fetch('https://randomuser.me/api/')
       .then((response) => response.json())
       .then((responseJson) => {
@@ -57,7 +61,9 @@ export default class App extends Component<Props> {
               dataSource={this.state.dataSource}/>
         <Footer isLoading={this.state.isLoading}
                 addPerson={this.addPersonOfInterest}
-                callApi={this.callApi} />
+                callApi={this.callApi}
+                counter={this.state.count}
+        />
       </View>
     );
   }
