@@ -18,7 +18,6 @@ export default class Main extends Component<Props> {
     let firstName = JSON.stringify(this.props.dataSource.results[0].name.first);
     let image = JSON.stringify(this.props.dataSource.results[0].picture.large);
     let personAge = JSON.stringify(this.props.dataSource.results[0].dob.age);
-    let personUuid = JSON.stringify(this.props.dataSource.results[0].login.uuid);
 
     return (
         <View style={styles.main}>
