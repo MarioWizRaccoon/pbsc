@@ -1,14 +1,16 @@
-import {White, Black, Orange, Dark_Grey} from '../constant/color';
+import React, {Component} from 'react';
 import {StyleSheet, Text, View} from "react-native";
 
-// TODO: if counter is higher than 5, color is orange
-// TODO: if counter is below 5, color is white
+import {White, Black, Orange, Dark_Grey} from '../constant/color';
 
-export default class dateCounter extends Component<Props> {
+export default class DateCounter extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.counter}></Text>
+        {this.props.counter > 4
+        ?
+        <Text style={StyleSheet.flatten([styles.counter, {backgroundColor: Orange}])}>{this.props.counter}</Text>
+:        <Text style={StyleSheet.flatten([styles.counter, {backgroundColor: White}])}>{this.props.counter}</Text>}
       </View>
     );
   }
@@ -16,22 +18,15 @@ export default class dateCounter extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: White,
-    height: 500,
-    width: 500,
-    fontFamily: 'Roboto, sans-serif',
-
+    height: 22,
+    width: 22,
+    borderRadius: 4,
   },
   counter: {
-    fontSize: 18,
-    textAlign: 'left',
-    height: 60,
+    fontFamily: 'Roboto, sans-serif',
+    fontSize: 14,
+    textAlign: 'center',
     alignItems: 'center',
-    backgroundColor: Dark_Grey,
     color: Black,
-    paddingLeft: 16,
   },
 });

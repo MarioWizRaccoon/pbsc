@@ -10,8 +10,18 @@ export default class Footer extends Component<Props> {
     return (
         <View style={styles.footer}>
           <View style={styles.innerFooter}>
-            <Bbutton text="No"  buttStyle={styles.noButton}   textStyle={styles.noTextButton} />
-            <Bbutton text="Yes" buttStyle={styles.yesButton}  textStyle={styles.yesTextButton} />
+            <Bbutton isLoaging={this.props.isLoading}
+                     onPress={this.props.callApi}
+                     text="No"
+                     buttStyle={styles.noButton}
+                     textStyle={styles.noTextButton}
+            />
+            <Bbutton isLoaging={this.props.isLoading}
+                     onPress={this.props.addPerson}
+                     text="Yes"
+                     buttStyle={styles.yesButton}
+                     textStyle={styles.yesTextButton}
+            />
           </View>
         </View>
     );
