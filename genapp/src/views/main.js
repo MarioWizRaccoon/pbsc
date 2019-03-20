@@ -35,8 +35,8 @@ export default class Main extends Component<Props> {
 
     if(this.state.isLoading){
       return(
-        <View style={{flex: 1, padding: 20}}>
-          <ActivityIndicator/>
+        <View style={styles.innerMain}>
+          <Text>Loading...</Text>
         </View>
       )
     }

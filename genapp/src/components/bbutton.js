@@ -5,9 +5,18 @@ import {Text, TouchableOpacity} from 'react-native';
 // TODO: If "yes" add one to counter state for the uuid.
 
 export default class Bbutton extends Component<Props> {
+
+  onPressButton = () => {
+    this.setState({
+      count: this.state.count
+    })
+  };
+
   render() {
     return (
-      <TouchableOpacity style={this.props.buttStyle}>
+      <TouchableOpacity
+        onPress={this.onPressButton}
+        style={this.props.buttStyle}>
         <Text style={this.props.textStyle}>
           {this.props.text}
         </Text>

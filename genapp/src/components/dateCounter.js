@@ -4,11 +4,20 @@ import {StyleSheet, Text, View} from "react-native";
 // TODO: if counter is higher than 5, color is orange
 // TODO: if counter is below 5, color is white
 
-export default class dateCounter extends Component<Props> {
+export default class DateCounter extends Component<Props> {
+
+  constructor(props){
+    super(props);
+    this.state = { count: 0 }
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.counter}></Text>
+        {this.state.count} > 4 ?
+        <Text style={styles.counter}{{backgrounColor: 'Orange'}}>{this.state.count}</Text>
+        :
+        <Text style={styles.counter}>{this.state.count}</Text>
       </View>
     );
   }

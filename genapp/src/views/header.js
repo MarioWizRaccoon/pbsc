@@ -3,12 +3,15 @@ import {StyleSheet, Text, View} from 'react-native';
 
 import {Dark_Grey, White} from '../constant/color';
 
+import {DateCounter} from '../components/DateCounter';
+
 export default class Header extends Component<Props> {
   render() {
     return (
         <View style={styles.header}>
           <View style={styles.innerHeader}>
             <Text style={styles.apptitle}>Gender Neutral Dating App</Text>
+            <DateCounter></DateCounter>
           </View>
         </View>
     );
