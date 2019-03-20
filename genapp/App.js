@@ -1,5 +1,10 @@
+"use strict";
+
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
+
+import { Provider } from 'react-redux';
+import store from './src/state/store';
 
 import {White} from './src/constant/color';
 
@@ -10,11 +15,13 @@ import Footer from './src/views/footer';
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <Header/>
-        <Main/>
-        <Footer/>
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Header/>
+          <Main/>
+          <Footer/>
+        </View>
+      </Provider>
     );
   }
 }
