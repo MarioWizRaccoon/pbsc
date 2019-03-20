@@ -3,50 +3,22 @@ import {StyleSheet,View, Text, Image, ActivityIndicator} from 'react-native';
 
 import {White, Black} from '../constant/color';
 
-// TODO: modify activityIndicator with the "loading..." statement
-// TODO: record uuid and set state "desired" to false.
-
 export default class Main extends Component<Props> {
-
-  constructor(props){
-    super(props);
-    this.state = { isLoading: true }
-  }
-
-  componentDidMount(){
-    return fetch('https://randomuser.me/api/')
-      .then((response) => response.json())
-      .then((responseJson) => {
-
-        this.setState({
-          isLoading: false,
-          dataSource: responseJson,
-        }, function(){
-
-        });
-
-      })
-      .catch((error) =>{
-        console.error(error);
-      });
-  }
-
   render() {
 
-    if(this.state.isLoading){
+    if(this.props.isLoading){
       return(
-        <View style={{flex: 1, padding: 20}}>
-          <ActivityIndicator/>
+        <View style={styles.innerMain}>
+          <Text>Loading...</Text>
         </View>
       )
     }
 
-    let lastName = JSON.stringify(this.state.dataSource.results[0].name.last);
-    let firstName = JSON.stringify(this.state.dataSource.results[0].name.first);
-    let image = JSON.stringify(this.state.dataSource.results[0].picture.large);
-    let personAge = JSON.stringify(this.state.dataSource.results[0].dob.age);
-    let personUuid = JSON.stringify(this.state.dataSource.results[0].login.uuid);
-
+    let lastName = JSON.stringify(this.props.dataSource.results[0].name.last);
+    let firstName = JSON.stringify(this.props.dataSource.results[0].name.first);
+    let image = JSON.stringify(this.props.dataSource.results[0].picture.large);
+    let personAge = JSON.stringify(this.props.dataSource.results[0].dob.age);
+    let personUuid = JSON.stringify(this.props.dataSource.results[0].login.uuid);
 
     return (
         <View style={styles.main}>
