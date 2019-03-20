@@ -8,8 +8,10 @@ export default class Main extends Component<Props> {
 
     if(this.props.isLoading){
       return(
-        <View style={styles.innerMain}>
-          <Text>Loading...</Text>
+        <View style={styles.main}>
+          <View style={styles.innerMain}>
+            <Text>Loading...</Text>
+          </View>
         </View>
       )
     }

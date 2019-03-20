@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 import {Light_Grey, Dark_Grey, Orange, White} from '../constant/color';
 
@@ -7,6 +7,46 @@ import Bbutton from '../components/bbutton';
 
 export default class Footer extends Component<Props> {
   render() {
+
+    if(this.props.counter > 4){
+      return(
+        <View style={styles.footer}>
+          <View style={styles.innerFooter}>
+            <Bbutton isLoaging={this.props.isLoading}
+                     onPress={this.props.callApi}
+                     text="No"
+                     buttStyle={styles.noButton}
+                     textStyle={styles.noTextButton}
+            />
+            <Bbutton isLoaging={this.props.isLoading}
+                     text="Yes"
+                     buttStyle={StyleSheet.flatten([styles.yesButton,{backgroundColor: Dark_Grey}])}
+                     textStyle={StyleSheet.flatten([styles.yesTextButton, {color: Light_Grey}])}
+            />
+          </View>
+        </View>
+
+      )
+    } else if (this.props.isLoading) {
+      return(
+        <View style={styles.footer}>
+          <View style={styles.innerFooter}>
+            <Bbutton isLoaging={this.props.isLoading}
+                     onPress={this.props.callApi}
+                     text="No"
+                     buttStyle={StyleSheet.flatten([styles.yesButton,{backgroundColor: Dark_Grey}])}
+                     textStyle={StyleSheet.flatten([styles.yesTextButton, {color: Light_Grey}])}
+            />
+            <Bbutton isLoaging={this.props.isLoading}
+                     text="Yes"
+                     buttStyle={StyleSheet.flatten([styles.yesButton,{backgroundColor: Dark_Grey}])}
+                     textStyle={StyleSheet.flatten([styles.yesTextButton, {color: Light_Grey}])}
+            />
+          </View>
+        </View>)
+
+    }
+
     return (
         <View style={styles.footer}>
           <View style={styles.innerFooter}>

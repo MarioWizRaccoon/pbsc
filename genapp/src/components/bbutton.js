@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Dark_Grey, Light_Grey} from "../constant/color";
 
 // TODO disabled "yes" button when reach 5
@@ -18,12 +18,3 @@ export default class Bbutton extends Component<Props> {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  disabledButton: {
-    backgroundColor: Dark_Grey,
-  },
-  disabledText: {
-    color: Light_Grey,
-  }
-});
