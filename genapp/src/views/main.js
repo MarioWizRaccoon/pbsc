@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet,View, Text, Image, ActivityIndicator} from 'react-native';
+import {StyleSheet,View, Text, Image } from 'react-native';
 
 import {White, Black} from '../constant/color';
 

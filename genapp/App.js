@@ -19,7 +19,7 @@ export default class App extends Component<Props> {
     };
   }
 
-  componentDidMount(): void {
+  componentDidMount() {
     this.callApi();
   }
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from "react-native";
 
-import {White, Black, Orange, Dark_Grey} from '../constant/color';
+import {White, Black, Orange } from '../constant/color';
 
 export default class DateCounter extends Component<Props> {
   render() {
