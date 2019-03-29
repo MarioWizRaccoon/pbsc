@@ -15,10 +15,11 @@ export default class App extends Component<Props> {
     this.state = {
       count: 0,
       isLoading: true ,
+      dataSource: []
     };
   }
 
-  componentDidMount(): void {
+  componentDidMount() {
     this.callApi();
   }
 
@@ -41,7 +42,7 @@ export default class App extends Component<Props> {
 
         this.setState({
           isLoading: false,
-          dataSource: responseJson,
+          dataSource: responseJson.results,
         }, function(){
 
         });
@@ -54,15 +55,16 @@ export default class App extends Component<Props> {
 
 
   render() {
+    const { isLoading, count, dataSource } = this.state;
     return (
       <View style={styles.container}>
-        <Header counter={this.state.count} />
-        <Main isLoading={this.state.isLoading}
-              dataSource={this.state.dataSource}/>
-        <Footer isLoading={this.state.isLoading}
+        <Header counter={count} />
+        <Main isLoading={isLoading}
+              dataSource={dataSource}/>
+        <Footer isLoading={isLoading}
                 addPerson={this.addPersonOfInterest}
                 callApi={this.callApi}
-                counter={this.state.count}
+                counter={count}
         />
       </View>
     );

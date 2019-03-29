@@ -1,66 +1,54 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 import {Light_Grey, Dark_Grey, Orange, White} from '../constant/color';
 
-import Bbutton from '../components/bbutton';
+import GenderButton from '../components/genderButton';
 
 export default class Footer extends Component<Props> {
   render() {
+    let noButtonActivation = {
+      color: White,
+      loading: false
+    };
 
-    if(this.props.counter > 4){
-      return(
-        <View style={styles.footer}>
-          <View style={styles.innerFooter}>
-            <Bbutton isLoaging={this.props.isLoading}
-                     onPress={this.props.callApi}
-                     text="No"
-                     buttStyle={styles.noButton}
-                     textStyle={styles.noTextButton}
-            />
-            <Bbutton isLoaging={this.props.isLoading}
-                     text="Yes"
-                     buttStyle={StyleSheet.flatten([styles.yesButton,{backgroundColor: Dark_Grey}])}
-                     textStyle={StyleSheet.flatten([styles.yesTextButton, {color: Light_Grey}])}
-            />
-          </View>
-        </View>
+    let yesButtonActivation = {
+      backColor: Orange,
+      textColor: White,
+      loading: false
+    };
 
-      )
-    } else if (this.props.isLoading) {
-      return(
-        <View style={styles.footer}>
-          <View style={styles.innerFooter}>
-            <Bbutton isLoaging={this.props.isLoading}
-                     onPress={this.props.callApi}
-                     text="No"
-                     buttStyle={StyleSheet.flatten([styles.yesButton,{backgroundColor: Dark_Grey}])}
-                     textStyle={StyleSheet.flatten([styles.yesTextButton, {color: Light_Grey}])}
-            />
-            <Bbutton isLoaging={this.props.isLoading}
-                     text="Yes"
-                     buttStyle={StyleSheet.flatten([styles.yesButton,{backgroundColor: Dark_Grey}])}
-                     textStyle={StyleSheet.flatten([styles.yesTextButton, {color: Light_Grey}])}
-            />
-          </View>
-        </View>)
+    if (this.props.isLoading) {
+      noButtonActivation = {
+        color: Light_Grey,
+        loading: true
+      }
+    }
 
+    if (this.props.isLoading || this.props.counter > 4) {
+      yesButtonActivation = {
+        backColor: Dark_Grey,
+        textColor: Light_Grey,
+        loading: true
+      }
     }
 
     return (
         <View style={styles.footer}>
           <View style={styles.innerFooter}>
-            <Bbutton isLoaging={this.props.isLoading}
-                     onPress={this.props.callApi}
-                     text="No"
-                     buttStyle={styles.noButton}
-                     textStyle={styles.noTextButton}
+            <GenderButton onPress= {noButtonActivation.loading ? null: this.props.callApi}
+                          text="No"
+                          buttonStyle={StyleSheet
+                            .flatten([styles.button,{backgroundColor: Dark_Grey}])}
+                          textStyle={StyleSheet
+                            .flatten([styles.textButton, {color: noButtonActivation.color}])}
             />
-            <Bbutton isLoaging={this.props.isLoading}
-                     onPress={this.props.addPerson}
-                     text="Yes"
-                     buttStyle={styles.yesButton}
-                     textStyle={styles.yesTextButton}
+            <GenderButton onPress={yesButtonActivation.loading ? null: this.props.addPerson}
+                          text="Yes"
+                          buttonStyle={StyleSheet
+                            .flatten([styles.button,{backgroundColor: yesButtonActivation.backColor}])}
+                          textStyle={StyleSheet
+                            .flatten([styles.textButton, {color: yesButtonActivation.textColor}])}
             />
           </View>
         </View>
@@ -85,32 +73,16 @@ const styles = StyleSheet.create({
     maxWidth: 500,
     backgroundColor: Light_Grey,
   },
-  noButton: {
+  button: {
     flex: 0.5,
-    backgroundColor: Dark_Grey,
     height: '100%',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  noTextButton: {
+  textButton: {
     fontFamily: 'Roboto',
     fontSize: 18,
     fontWeight: 'bold',
-    color: White,
-  },
-  yesButton: {
-    flex: 0.5,
-    backgroundColor: Orange,
-    height: '100%',
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  yesTextButton: {
-    fontFamily: 'Roboto',
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: White,
   },
 });

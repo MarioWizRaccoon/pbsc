@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from "react-native";
 
-import {White, Black, Orange, Dark_Grey} from '../constant/color';
+import {White, Black, Orange } from '../constant/color';
 
 export default class DateCounter extends Component<Props> {
   render() {
+    let counterBackColor = White;
+    if (this.props.counter > 4) {
+      counterBackColor = Orange;
+    }
+
     return (
       <View style={styles.container}>
-        {this.props.counter > 4
-        ?
-        <Text style={StyleSheet.flatten([styles.counter, {backgroundColor: Orange}])}>{this.props.counter}</Text>
-:        <Text style={StyleSheet.flatten([styles.counter, {backgroundColor: White}])}>{this.props.counter}</Text>}
+         <Text style={StyleSheet.flatten([styles.counter, {backgroundColor: counterBackColor}])}>{this.props.counter}</Text>
       </View>
     );
   }
