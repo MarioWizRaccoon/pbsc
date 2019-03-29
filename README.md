@@ -18,8 +18,17 @@
 * Duration: 1h30m
 * Task: Remove touchable opacity from footer and use props to feed data to the bbutton component. Set the build setting to build app for iPhone and iPad.
 
+### Date: 2019-03-19
+* Duration: 6h30m
+* Task: Call the api and display the information of the person: name, picture and age.
 
+### Date: 2019-03-20
+* Duration: 6h30m
+* Task: Make the button call the API and make the counter increment.
 
+### Date: 2019-03-28
+* Duration: 2h20m
+* Task: Major refactoring of code. Remove all unnecessary repetition and make the code more readable.
 
 
 
