@@ -13,7 +13,7 @@ export default class App extends Component<Props> {
     super(props);
 
     this.state = {
-      count: 0,
+      count: 2,
       isLoading: true ,
       dataSource: []
     };
